@@ -1,3 +1,4 @@
+<times>
 <!-- 8:30 Classes -->
 <time startTime="8:30">
 	<day day="Friday">
@@ -5,6 +6,7 @@
 			<room>SW9-206</room>
 			<instructor>Steve Fabiszewski</instructor>
 			<type>Lecture</type>
+			<endTime>10:20</endTime>
 		</course>
 	</day>
 </time>
@@ -15,12 +17,15 @@
 			<room>SW5-1840</room>
 			<instructor>Richard Chau</instructor>
 			<type>Lecture</type>
+			<endTime>10:20</endTime>
+		</course>
 	</day>
 	<day day="Friday">
 		<course course="ACIT4660">
 			<room>SW9-206</room>
 			<instructor>Steve Fabiszewski</instructor>
 			<type>Lecture</type>
+			<endTime>10:20</endTime>
 		</course>
 	</day>
 </time>
@@ -31,6 +36,7 @@
 			<room>SE12-306</room>
 			<instructor>Bethany Edmunds</instructor>
 			<type>Lab</type>
+			<endTime>12:20</endTime>
 		</course>
 	</day>
 	<day day="Wednesday">
@@ -38,6 +44,7 @@
 			<room>SE12-306</room>
 			<instructor>Steve Fabiszewski</instructor>
 			<type>Lab</type>
+			<endTime>12:20</endTime>
 		</course>
 	</day>
 	<day day="Thursday">
@@ -45,6 +52,7 @@
 			<room>SE12-320</room>
 			<instructor>James Parry</instructor>
 			<type>Lab</type>
+			<endTime>12:20</endTime>
 		</course>
 	</day>
 </time>
@@ -55,6 +63,7 @@
 			<room>SE12-306</room>
 			<instructor>Bethany Edmunds</instructor>
 			<type>Lab</type>
+			<endTime>12:20</endTime>
 		</course>
 	</day>
 	<day day="Wednesday">
@@ -62,6 +71,7 @@
 			<room>SE12-306</room>
 			<instructor>Steve Fabiszewski</instructor>
 			<type>Lab</type>
+			<endTime>12:20</endTime>
 		</course>
 	</day>
 	<day day="Thursday">
@@ -69,6 +79,7 @@
 			<room>SE12-320</room>
 			<instructor>James Parry</instructor>
 			<type>Lab</type>
+			<endTime>12:20</endTime>
 		</course>
 	</day>
 </time>
@@ -79,6 +90,7 @@
 			<room>SW9-206</room>
 			<instructor>Medhat Elmasry</instructor>
 			<type>Lecture</type>
+			<endTime>1:20</endTime>
 		</course>
 	</day>
 	<day day="Wednesday">
@@ -86,6 +98,7 @@
 			<room>SW3-1750</room>
 			<instructor>James Parry</instructor>
 			<type>Lecture</type>
+			<endTime>2:20</endTime>
 		</course>
 	</day>
 </time>
@@ -96,6 +109,7 @@
 			<room>SE12-306</room>
 			<instructor>Trevor Lord</instructor>
 			<type>Lecture</type>
+			<endTime>3:20</endTime>
 		</course>
 	</day>
 	<day day="Tuesday">
@@ -103,6 +117,7 @@
 			<room>SE12-306</room>
 			<instructor>Medhat Elmasry</instructor>
 			<type>Lab</type>
+			<endTime>3:20</endTime>
 		</course>
 	</day>
 	<day day="Wednesday">
@@ -110,6 +125,7 @@
 			<room>SW3-1750</room>
 			<instructor>James Parry</instructor>
 			<type>Lecture</type>
+			<endTime>2:20</endTime>
 		</course>
 	</day>
 	<day day="Thursday">
@@ -117,16 +133,18 @@
 			<room>SE12-306</room>
 			<instructor>Richard Chau</instructor>
 			<type>Lab</type>
+			<endTime>3:20</endTime>
 		</course>
 	</day>
 </time>
 <!-- 2:30 Classes -->
-<time time="2:30">
+<time startTime="2:30">
 	<day day="Monday">
 		<course course="ACIT4770">
 			<room>SE12-306</room>
 			<instructor>Trevor Lord</instructor>
 			<type>Lecture</type>
+			<endTime>3:20</endTime>
 		</course>
 	</day>
 	<day day="Tuesday">
@@ -134,6 +152,7 @@
 			<room>SE12-306</room>
 			<instructor>Medhat Elmasry</instructor>
 			<type>Lab</type>
+			<endTime>3:20</endTime>
 		</course>
 	</day>
 	<day day="Thursday">
@@ -141,16 +160,18 @@
 			<room>SE12-306</room>
 			<instructor>Richard Chau</instructor>
 			<type>Lab</type>
+			<endTime>3:20</endTime>
 		</course>
 	</day>
 </time>
 <!-- 3:30 Classes -->
-<time time="3:30">
+<time startTime="3:30">
 	<day day="Monday">
 		<course course="ACIT4910">
 			<room>SW9-206</room>
 			<instructor>Richard Chau</instructor>
 			<type>Lecture</type>
+			<endTime>4:20</endTime>
 		</course>
 	</day>
 	<day day="Tuesday">
@@ -158,16 +179,18 @@
 			<room>SW3-3615</room>
 			<instructor>Bethany Edmunds</instructor>
 			<type>Lecture</type>
+			<endTime>5:20</endTime>
 		</course>
 	</day>
 </time>
 <!-- 4:30 Classes -->
-<time time="4:30">
+<time startTime="4:30">
 	<day day="Monday">
 		<course course="ACIT4650">
 			<room>SE6-205</room>
 			<instructor>Medhat Elmasry</instructor>
 			<type>Lecture</type>
+			<endTime>5:20</endTime>
 		</course>
 	</day>
 	<day day="Tuesday">
@@ -175,6 +198,8 @@
 			<room>SW3-3615</room>
 			<instructor>Bethany Edmunds</instructor>
 			<type>Lecture</type>
+			<endTime>5:20</endTime>
 		</course>
 	</day>
 </time>
+</times>
