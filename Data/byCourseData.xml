@@ -1,0 +1,59 @@
+<courses>
+<!-- ACIT4770 -->
+<course course="ACIT4770">
+	<day day="Monday">
+		<time startTime="1:30" endTime="3:20">
+			<room>SE12-306</room>
+			<instructor>Trevor Lord</instructor>
+			<type>Lecture</type>
+		</time>
+	</day>
+</course>
+<!-- ACIT4910 -->
+<course course="ACIT4910">
+	<day day="Monday">
+		<time startTime="3:30" endTime="4:20">
+			<room>SW9-206</room>
+			<instructor>Richard Chau</instructor>
+			<type>Lecture</type>
+		</time>
+	</day>
+	<day day="Thursday">
+		<time startTime="9:30" endTime="10:20">
+			<room>SW5-1840</room>
+			<instructor>Richard Chau</instructor>
+			<type>Lecture</type>
+		</time>
+		<time startTime="1:30" endTime="3:20">
+			<room>SW5-1840</room>
+			<instructor>Richard Chau</instructor>
+			<type>Lab</type>
+		</time>
+	</day>
+</course>
+<!-- ACIT4650 -->
+<course course="ACIT4650">
+	<day day="Monday">
+		<time startTime="4:30" endTime="5:20">
+			<room>SE6-205</room>
+			<instructor>Medhat Elmasry</instructor>
+			<type>Lecture</type>
+		</time>
+	</day>
+	<day day="Tuesday">
+		<time startTime="12:30" endTime="1:20">
+			<room>SW9-206</room>
+			<instructor>Medhat Elmasry</instructor>
+			<type>Lecture</type>
+		</time>
+		<time startTime="1:30" endTime="3:20">
+			<room>SE12-306</room>
+			<instructor>Medhat Elmasry</instructor>
+			<type>Lab</type>
+		</time>
+	</day>
+</course>
+<!-- ACIT4620-->
+<!-- ACIT4660-->
+<!-- ACIT4850-->
+</courses>
