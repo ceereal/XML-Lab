@@ -2,10 +2,10 @@
 
 class Timetable extends CI_Model {
 
-    protected $xml = null;
-    protected $days = array();
-    protected $times = array();
-    protected $courses = array();
+    public $xml = null;
+    public $days = array();
+    public $times = array();
+    public $courses = array();
 
     public function __construct() {
         parent::__construct();
@@ -59,6 +59,11 @@ class Timetable extends CI_Model {
                 $this->courses[]=$tempBooking;
             }
         }
+    }
+    
+    public function getDays(){
+  
+        return $this->$days;
     }
 
 }
