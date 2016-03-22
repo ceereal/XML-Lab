@@ -13,6 +13,26 @@ class Welcome extends Application {
             $this->load->helper('directory');
             $this->data['pagebody'] = 'homepage';
             
+            $bookingDays = $this->Timetable->getDay();
+            $booking= "";
+            foreach ($bookingDays as $perBooking){
+                $booking .= (String)$perBooking;
+            }
+            
+            $bookingTimes = $this->Timetable->getTime();
+            foreach ($bookingTimes as $perBooking){
+                $booking .=  (String)$perBooking;
+            }
+           
+            $bookingCourses = $this->Timetable->getCourse();
+            foreach ($bookingCourses as $perBooking){
+                $booking .=  (String)$perBooking;
+            }
+            
+            $this->data['bookings'] = $booking;
+            $this->render();
+            
+            /*
             $options = array(
                 array('option' => 'day'),
                 array('option' => 'time'),
@@ -20,8 +40,11 @@ class Welcome extends Application {
             
             $this->data['options'] = $options;
             $this->render();
+             * 
+             */
 	}
         
+        /*
         public function showTimetable($option) {
             $this->data['pagebody'] = 'timetablefmt';
             $timetable = new Timetable();
@@ -67,7 +90,12 @@ class Welcome extends Application {
                     break;
                 default:
             }
+         * 
+         
+         
             $this->data['bookings'] = $bookings;
             $this->render();
         }
+         *
+         */
 }

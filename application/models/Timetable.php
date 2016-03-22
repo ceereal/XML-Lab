@@ -92,6 +92,13 @@ class Booking {
     public $instructor;
     public $type;
 
-    public function __construct() {  
+    public function __construct($info = null) {
+        $this->day = (String) $info['day'];
+	$this->startTime = (String) $info['startTime'];
+	$this->endTime = (String) $info['endTime'];
+	$this->course = (String) $info['course'];
+	$this->room = (String) $info['room'];
+	$this->instructor = (String) $info['instructor'];
+        $this->type = (String) $info['type'];
     }
 }
