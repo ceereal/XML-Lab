@@ -80,9 +80,6 @@ class Timetable extends CI_Model {
     public function getCourse(){
         return $this->courses;
     }
-    
-    
-
 }
 
 class Booking {
@@ -95,9 +92,6 @@ class Booking {
     public $instructor;
     public $type;
 
-    public function __contruct() {
-       
-        
+    public function __construct() {  
     }
-
 }
