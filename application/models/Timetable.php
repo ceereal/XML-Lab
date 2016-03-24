@@ -19,17 +19,17 @@ class Timetable extends CI_Model {
 
             //loops information into temp booking
             foreach ($day->time as $time) {
-                $tempBooking->startTime = $time['startTime'];
+                $tempBooking->startTime = (string) $time['startTime'];
                 $tempBooking->course = $time->booking->course;
                 $tempBooking->room = $time->booking->room;
                 $tempBooking->instructor = $time->booking->instructor;
                 $tempBooking->type = $time->booking->type;
                 $tempBooking->endTime = $time->booking->endTime;
-                $this->days[]=$tempBooking; //add the temp booking to the $days array
+                $this->days[] = new Booking($tempBooking); //add the temp booking to the $days array
             }
         }
         
-        //loops through all the booking times
+       /* //loops through all the booking times
         foreach ($this->xml->time as $time) {
             //create a new booking
             $tempBooking = new Booking();
@@ -63,7 +63,7 @@ class Timetable extends CI_Model {
                 $tempBooking->endTime = $day->booking->endTime;
                 $this->courses[]=$tempBooking; //add the temp booking into the $courses array
             }
-        }
+        }*/
     }
     
     // gets a list of days
@@ -80,17 +80,18 @@ class Timetable extends CI_Model {
     public function getCourse(){
         return $this->courses;
     }
+
 }
 
-class Booking {
+class Booking extends CI_Model{
 
-    public $day;
-    public $startTime;
-    public $endTime;
-    public $course;
-    public $room;
-    public $instructor;
-    public $type;
+    public $day ="";
+    public $startTime="";
+    public $endTime="";
+    public $course="";
+    public $room="";
+    public $instructor="";
+    public $type="";
 
     public function __construct() {  
     }

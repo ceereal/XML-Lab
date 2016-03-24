@@ -12,23 +12,24 @@ class Welcome extends Application {
 	{
             $this->load->helper('directory');
             $this->data['pagebody'] = 'homepage';
+            $timetable = new Timetable();
             
-            $options = array(
-                array('option' => 'day'),
-                array('option' => 'time'),
-                array('option' => 'course'));
+            //$dayCodes = $timetable->getDayCodes();
+           // $timeCodes = $timetable->getTimeslots();
             
-            $this->data['options'] = $options;
-            $this->render();
+            $this->data['title'] = "ACIT4850 XML Lab";
+
+            
+            
+            $this->showTimetable();
+            
 	}
         
-        public function showTimetable($option) {
-            $this->data['pagebody'] = 'timetablefmt';
+        public function showTimetable() {
+            $this->data['pagebody'] = 'homepage';
             $timetable = new Timetable();
-            switch($option) {
-                
-                case 'day':
-                    foreach($timetable->getDays() as $list) {
+            $bookings;
+                    foreach($timetable->getDay() as $list) {
                     $bookings = array(
                         'day' => $list->day,
                         'startTime' => $list->startTime,
@@ -38,35 +39,7 @@ class Welcome extends Application {
                         'instructor' => $list->instructor,
                         'type' => $list->type);
                     }
-                    break;
-                    
-                case 'time':
-                    foreach($timetable->getTimes() as $list) {
-                    $bookings = array(
-                        'day' => $list->day,
-                        'startTime' => $list->startTime,
-                        'endTime' => $list->endTime,
-                        'course' => $list->course,
-                        'room' =>  $list->room,
-                        'instructor' => $list->instructor,
-                        'type' => $list->type);
-                    }
-                    break;
-                    
-                case 'course':
-                    foreach($timetable->getCourses() as $list) {
-                    $bookings = array(
-                        'day' => $list->day,
-                        'startTime' => $list->startTime,
-                        'endTime' => $list->endTime,
-                        'course' => $list->course,
-                        'room' =>  $list->room,
-                        'instructor' => $list->instructor,
-                        'type' => $list->type);
-                    }
-                    break;
-                default:
-            }
+
             $this->data['bookings'] = $bookings;
             $this->render();
         }
