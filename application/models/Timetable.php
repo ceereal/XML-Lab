@@ -12,56 +12,53 @@ class Timetable extends CI_Model {
         $this->xml = simplexml_load_file(DATAPATH . 'courseData' . XMLSUFFIX);
 
         //loop though all days bookings
-        foreach ($this->xml->day as $day) {
-            //create a new empty booking
-            $tempBooking = new Booking();
-            $tempBooking->day = $day['day'];
-
+        foreach ($this->xml->day as $currentDay) {
+     
+            
             //loops information into temp booking
-            foreach ($day->time as $time) {
-                $tempBooking->startTime = $time['startTime'];
-                $tempBooking->course = $time->booking->course;
-                $tempBooking->room = $time->booking->room;
-                $tempBooking->instructor = $time->booking->instructor;
-                $tempBooking->type = $time->booking->type;
-                $tempBooking->endTime = $time->booking->endTime;
-                $this->days[]=$tempBooking; //add the temp booking to the $days array
+            foreach ($currentDay->booking as $booking) {
+                
+                $tempBooking = new Booking();
+                $tempBooking->day = $currentDay['day']->__toString();
+                $tempBooking->course = $booking->course;
+                $tempBooking->room = $booking->room;
+                $tempBooking->instructor = $booking->instructor;
+                $tempBooking->type = $booking->type;
+                $tempBooking->startTime = $booking->startTime;
+                $tempBooking->endTime = $booking->endTime;
+                $this->days[] = $tempBooking; //add the temp booking to the $days array
             }
         }
         
         //loops through all the booking times
         foreach ($this->xml->time as $time) {
-            //create a new booking
-            $tempBooking = new Booking();
-            $tempBooking->startTime = $time['startTime'];
-
             //loops information into temp booking 
-            foreach ($time->day as $day) {
-                $tempBooking->day = $day['day'];
-                $tempBooking->course = $day->booking->course;
-                $tempBooking->room = $day->booking->room;
-                $tempBooking->instructor = $day->booking->instructor;
-                $tempBooking->type = $day->booking->type;
-                $tempBooking->endTime = $day->booking->endTime;
-                $this->times[]=$tempBooking; //add the temp booking into the $times array 
+            foreach ($time->booking as $booking) {
+                $tempBooking = new Booking();
+                $tempBooking->startTime = $time['startTime']->__toString();
+                $tempBooking->day = $booking->day;
+                $tempBooking->course = $booking->course;
+                $tempBooking->room = $booking->room;
+                $tempBooking->instructor = $booking->instructor;
+                $tempBooking->type = $booking->type;
+                $tempBooking->endTime = $booking->endTime;
+                $this->times[] = $tempBooking; //add the temp booking into the $times array 
             }
         }
         
         //loops through all the booking courses 
         foreach ($this->xml->course as $course) {
-            //create a new booking
-            $tempBooking = new Booking();
-            $tempBooking->course = $course['course'];
-
-            //loops information into temp booking
-            foreach ($course->day as $day) {
-                $tempBooking->day = $day['day'];
-                $tempBooking->startTime = $day->booking->startTime;
-                $tempBooking->room = $day->booking->room;
-                $tempBooking->instructor = $day->booking->instructor;
-                $tempBooking->type = $day->booking->type;
-                $tempBooking->endTime = $day->booking->endTime;
-                $this->courses[]=$tempBooking; //add the temp booking into the $courses array
+            //loops information into temp booking 
+            foreach ($course->booking as $booking) {
+                $tempBooking = new Booking();
+                $tempBooking->course = $course['course']->__toString();
+                $tempBooking->day = $booking->day;
+                $tempBooking->startTime = $booking->startTime;
+                $tempBooking->room = $booking->room;
+                $tempBooking->instructor = $booking->instructor;
+                $tempBooking->type = $booking->type;
+                $tempBooking->endTime = $booking->endTime;
+                $this->courses[] = $tempBooking; //add the temp booking into the $courses array
             }
         }
     }
@@ -80,9 +77,10 @@ class Timetable extends CI_Model {
     public function getCourse(){
         return $this->courses;
     }
+
 }
 
-class Booking {
+class Booking extends CI_Model{
 
     public $day;
     public $startTime;

@@ -1,7 +1,23 @@
 <div class="options">
-    {options}
-    <div class ="option">
-        <a href="Welcome/showTimetable/{option}">{option} option</a>
+    
+    <div class ="option">  
     </div>
-    {/options}
+    
+
+<div class="timeTable">
+    {bookings}
+    <div class="booking">
+        <p>{startTime}</p>
+        <p>{day}</p>
+        <p>{endTime}</p>
+        <p>{course}</p>
+        <p>{room}</p>
+        <p>{instructor}</p>
+        <p>{type}</p>
+    </div>
+    {/bookings}
+</div>
+        
+    </div>
+    
 </div>
