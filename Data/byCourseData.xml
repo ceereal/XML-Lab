@@ -5,133 +5,129 @@
 <data>
 <!-- ACIT4770 -->
 <course course="ACIT4770">
-	<day day="Monday">
             <booking>
-		<time startTime="1:30"></time>
-			<room>SE12-306</room>
-			<instructor>Trevor Lord</instructor>
-			<type>Lecture</type>
-                        <endTime>3:20</endTime>
+                <day>Monday</day>
+		<startTime>1:30</startTime>
+                <room>SE12-306</room>
+                <instructor>Trevor Lord</instructor>
+                <type>Lecture</type>
+                <endTime>3:20</endTime>
             </booking>
-	</day>
 </course>
 <!-- ACIT4910 -->
 <course course="ACIT4910">
-	<day day="Monday">
             <booking>
-		<time startTime="3:30"></time>
-			<room>SW9-206</room>
-			<instructor>Richard Chau</instructor>
-			<type>Lecture</type>
-                        <endTime>4:20</endTime>
+		<startTime>3:30</startTime>
+                <day>Monday</day>
+                <room>SW9-206</room>
+                <instructor>Richard Chau</instructor>
+                <type>Lecture</type>
+                <endTime>4:20</endTime>
             </booking>
-	</day>
-	<day day="Thursday">
+
             <booking>
-		<time startTime="9:30"></time>
-			<room>SW5-1840</room>
-			<instructor>Richard Chau</instructor>
-			<type>Lecture</type>
-                        <endTime>10:20</endTime>
+		<startTime>9:30</startTime>
+                <day>Thursday</day>
+                <room>SW5-1840</room>
+                <instructor>Richard Chau</instructor>
+                <type>Lecture</type>
+                <endTime>10:20</endTime>
             </booking>
-                <booking>
-		<time startTime="1:30"></time>
-			<room>SW5-1840</room>
-			<instructor>Richard Chau</instructor>
-			<type>Lab</type>
-                        <endTime>3:20</endTime>
-                </booking>
-	</day>
+            
+            <booking>
+		<startTime>1:30</startTime>
+                <day>Thursday</day>
+                <room>SW5-1840</room>
+                <instructor>Richard Chau</instructor>
+                <type>Lab</type>
+                <endTime>3:20</endTime>
+            </booking>
+
 </course>
 <!-- ACIT4650 -->
 <course course="ACIT4650">
-	<day day="Monday">
             <booking>
-		<time startTime="4:30"></time>
-			<room>SE6-205</room>
-			<instructor>Medhat Elmasry</instructor>
-			<type>Lecture</type>
-                        <endTime>5:20</endTime>
-            </booking>
-	</day>
-	<day day="Tuesday">
-            <booking>
-		<time startTime="12:30"></time>
-			<room>SW9-206</room>
-			<instructor>Medhat Elmasry</instructor>
-			<type>Lecture</type>
-                        <endTime>1:20</endTime>
+		<startTime>4:30</startTime>
+                <day>Monday</day>
+                <room>SE6-205</room>
+                <instructor>Medhat Elmasry</instructor>
+                <type>Lecture</type>
+                <endTime>5:20</endTime>
             </booking>
             <booking>
-		<time startTime="1:30"></time>
-			<room>SE12-306</room>
-			<instructor>Medhat Elmasry</instructor>
-			<type>Lab</type>
-                        <endTime>3:20</endTime>
-
+		<startTime>12:30</startTime>
+                <day>Tuesday</day>
+                <room>SW9-206</room>
+                <instructor>Medhat Elmasry</instructor>
+                <type>Lecture</type>
+                <endTime>1:20</endTime>
             </booking>
-	</day>
+            <booking>
+		<startTime>1:30</startTime>
+                <day>Tuesday</day>
+                <room>SE12-306</room>
+                <instructor>Medhat Elmasry</instructor>
+                <type>Lab</type>
+                <endTime>3:20</endTime>
+            </booking>
 </course>
 <!-- ACIT4620-->
 <course>
-    <day day="Tuesday">
         <booking>
-        <time startTime="10:30"></time>
-                <room>SE12-306</room>
-                <instructor>Bethany Edmunds</instructor>
-                <type>Lab</type>
-                <endTime>12:20</endTime>
+            <startTime>10:30</startTime>
+            <day>Tuesday</day>
+            <room>SE12-306</room>
+            <instructor>Bethany Edmunds</instructor>
+            <type>Lab</type>
+            <endTime>12:20</endTime>
         </booking>
+        
         <booking>
-        <time startTime="3:30"></time>
-                <room>SW3-3615</room>
-                <instructor>Bethany Edmunds</instructor>
-                <type>Lecture</type>
-                <endTime>5:20</endTime>
+            <startTime>3:30</startTime>
+            <day>Tuesday</day>
+            <room>SW3-3615</room>
+            <instructor>Bethany Edmunds</instructor>
+            <type>Lecture</type>
+            <endTime>5:20</endTime>
         </booking>
-    </day>
 </course>
 <!-- ACIT4660-->
 <course>
-    <day day="Wednesday">
         <booking>
-        <time startTime="10:30"></time>
-                    <room>SE12-306</room>
-                    <instructor>Steve Fabiszewski</instructor>
-                    <type>Lab</type>
-                    <endTime>12:20</endTime>
+            <startTime>10:30</startTime>
+            <day>Wednesday</day>
+            <room>SE12-306</room>
+            <instructor>Steve Fabiszewski</instructor>
+            <type>Lab</type>
+            <endTime>12:20</endTime>
         </booking>
-    </day>
-    <day day="Friday">
         <booking>
-        <time startTime="8:30"></time>
-                    <room>SW9-206</room>
-                    <instructor>Steve Fabiszewski</instructor>
-                    <type>Lecture</type>
-                    <endTime>10:20</endTime>
+            <startTime>8:30</startTime>
+            <day>Friday</day>
+            <room>SW9-206</room>
+            <instructor>Steve Fabiszewski</instructor>
+            <type>Lecture</type>
+            <endTime>10:20</endTime>
         </booking>
-    </day>
 </course>
 <!-- ACIT4850-->
 <course>
-    <day day="Wednesday">
         <booking>
-        <time startTime="12:30"></time>
-                    <room>SW3-1750</room>
-                    <instructor>James Parry</instructor>
-                    <type>Lecture</type>
-                    <endTime>2:20</endTime>
+            <startTime>12:30</startTime>
+            <day>Wednesday</day>
+            <room>SW3-1750</room>
+            <instructor>James Parry</instructor>
+            <type>Lecture</type>
+            <endTime>2:20</endTime>
         </booking>
         
-    </day>
-    <day day="Friday">
         <booking>
-        <time startTime="10:30"></time>
-                    <room>SE12-320</room>
-                    <instructor>James Parry</instructor>
-                    <type>Lab</type>
-                    <endTime>12:20</endTime>
+            <startTime>10:30</startTime>
+            <day>Friday</day>
+            <room>SE12-320</room>
+            <instructor>James Parry</instructor>
+            <type>Lab</type>
+            <endTime>12:20</endTime>
         </booking>
-    </day>
 </course>
 </data>

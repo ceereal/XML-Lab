@@ -9,7 +9,6 @@
     <div class="booking">
         <p>{startTime}</p>
         <p>{day}</p>
-        
         <p>{endTime}</p>
         <p>{course}</p>
         <p>{room}</p>
