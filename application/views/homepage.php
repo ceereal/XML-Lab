@@ -1,5 +1,6 @@
+
+
 <div class="options">
-    
     <div class ="option">  
     </div>
     
@@ -7,13 +8,12 @@
 <div class="timeTable">
     {bookings}
     <div class="booking">
-        <p>{startTime}</p>
+        <p>---------------------------------</p>
         <p>{day}</p>
-        <p>{endTime}</p>
-        <p>{course}</p>
-        <p>{room}</p>
-        <p>{instructor}</p>
-        <p>{type}</p>
+        <p>{startTime} - {endTime}</p>
+        <p>{room} / {type}</p>
+        <p>{instructor} - {course}</p>
+        <p>---------------------------------</p>
     </div>
     {/bookings}
 </div>
