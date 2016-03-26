@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!-- <xs:element name="day" type="xs:string"/> -->
+	<xs:element name="startTime" type="xs:string"/>
+	<xs:element name="course" type="xs:string"/>
+	<xs:element name="room" type="xs:string"/>
+	<xs:element name="instructor" type="xs:string"/>
+	<xs:element name="endTime" type="xs:string"/>
+	
+	<xs:attribute name="day" type="xs:string"/>
+
+	<xs:element name="data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="day" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="day">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="booking" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="booking">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="startTime" />
+				<xs:element ref="course" />
+				<xs:element ref="room" />
+				<xs:element ref="instructor" />
+				<xs:element ref="type" />
+				<xs:element ref="endTime" />
+			</xs:sequence>
+			<xs:attribute ref="day"/>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
