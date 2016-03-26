@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<!DOCTYPE data SYSTEM 'coursesDTD.dtd'>
-<data>
+<!-- <!DOCTYPE data SYSTEM 'coursesDTD.dtd'> -->
+<data
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespacesSchemaLocation="Scheming.xsd">
 <!-- 8:30 Classes -->
 <time startTime="8:30">
             <booking>
@@ -50,7 +52,7 @@
 		<course>ACIT4660</course>
                 <day>Wednesday</day>
                 <room>SE12-306</room>
-                <<instructor>Steve Fabiszewski</instructor>
+                <instructor>Steve Fabiszewski</instructor>
                 <type>Lab</type>
                 <endTime>12:20</endTime>
             </booking>

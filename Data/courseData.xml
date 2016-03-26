@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<!DOCTYPE data SYSTEM 'coursesDTD.dtd'>
-<data>
+<!-- <!DOCTYPE data SYSTEM 'coursesDTD.dtd'> -->
+<data
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespacesSchemaLocation="scheming.xsd">
     <!-- Monday -->
     <day day="Monday">
                 <booking>
@@ -42,21 +44,21 @@
                 </booking>
                 <booking>
                     <course>ACIT4650</course>
-                            <room>SW9-206</room>
-                            <instructor>Medhat Elmasry</instructor>
-                            <type>Lecture</type>
-                            <startTime>12:30</startTime>
-                            <endTime>1:20</endTime>
+                    <room>SW9-206</room>
+                    <instructor>Medhat Elmasry</instructor>
+                    <type>Lecture</type>
+                    <startTime>12:30</startTime>
+                    <endTime>1:20</endTime>
                 </booking>
 
-            <booking>
+				<booking>
                     <course>ACIT4650</course>
-                            <room>SE12-306</room>
-                            <instructor>Medhat Elmasry</instructor>
-                            <type>Lab</type>
-                            <startTime>1:30</startTime>
-                            <endTime>3:20</endTime>
-                    </booking>
+                    <room>SE12-306</room>
+                    <instructor>Medhat Elmasry</instructor>
+                    <type>Lab</type>
+                    <startTime>1:30</startTime>
+                    <endTime>3:20</endTime>
+                </booking>
                 <booking>
                     <course>ACIT4620</course>
                     <room>SW3-3615</room>
