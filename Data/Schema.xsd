@@ -1,43 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-	<!-- <xs:element name="day" type="xs:string"/> -->
-	<xs:element name="startTime" type="xs:string"/>
-	<xs:element name="course" type="xs:string"/>
-	<xs:element name="room" type="xs:string"/>
-	<xs:element name="instructor" type="xs:string"/>
-	<xs:element name="endTime" type="xs:string"/>
-	
-	<xs:attribute name="day" type="xs:string"/>
+    <xs:simpleType name="Tdaylist">
+         <xs:restriction base="xs:string">
+             <xs:enumeration value="Monday"/>
+             <xs:enumeration value="Tuesday"/>
+             <xs:enumeration value="Wednesday"/>
+             <xs:enumeration value="Thursday"/>
+             <xs:enumeration value="Friday"/>
+             
+         </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="Tday">
+        <xs:sequence>
+            <xs:element name="booking" type="Tbooking" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="day" type="Tdaylist" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="Tcourses">
+        <xs:sequence>
+            <xs:element name="booking" type="Tbooking" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="course" type="Tcoursecode"/>
+    </xs:complexType>
+    
+    <xs:complexType name="Tstime">
+        <xs:sequence>
+            <xs:element name="booking" type="Tbooking" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="startTime" type="Ttime"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="Ttime">
+        <xs:restriction base="xs:string">
+            <!-- represents up to 19:59 although since it's a 12h clock we only need up to 12:59 -->
+            <xs:pattern value="[0-1]?[0-9]:[0-5][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Tcoursecode">
+        <xs:restriction base="xs:string">
+            <!-- not as multipurpose but it fits our schedule-->
+            <xs:pattern value="ACIT\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="Tbooking">
+        <xs:sequence>
+            <xs:element name="startTime" type="Ttime" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="day" type="Tdaylist" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="course" type="Tcoursecode" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="room" type="Troom"/>
+            <xs:element name="instructor" type="Tinstructor"/>
+            <xs:element name="type" type="Ttype"/>
+            <xs:element name="endTime" type="Ttime"/>
+            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="Tinstructor">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+        
+    
+    <xs:simpleType name="Troom">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}\d{1,2}-\d{3,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Ttype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Lab"/>
+            <xs:enumeration value="Lecture"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 
 	<xs:element name="data">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="day" />
+				<xs:element name="day" type="Tday" maxOccurs="unbounded"/>
+                                <xs:element name="time" type="Tstime" maxOccurs="unbounded"/>
+                                <xs:element name="course" type="Tcourses" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:element name="day">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="booking" />
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
 	
-	<xs:element name="booking">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="startTime" />
-				<xs:element ref="course" />
-				<xs:element ref="room" />
-				<xs:element ref="instructor" />
-				<xs:element ref="type" />
-				<xs:element ref="endTime" />
-			</xs:sequence>
-			<xs:attribute ref="day"/>
-		</xs:complexType>
-	</xs:element>
 
 </xs:schema>
