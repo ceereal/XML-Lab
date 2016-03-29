@@ -19,9 +19,36 @@ class Welcome extends Application {
             
             $this->data['title'] = "ACIT4850 XML Lab";
 
-            $this->showTimetable();
+            //$this->showTimetable(); //Lab8 incomplete function
+            
+            //Code for Lab 9 XML Validation
+            
+            //load the documents, all our XML is in one doc
+            $xml = new DOMDocument();
+            $xml->load(DATAPATH . "courseData" . XMLSUFFIX);
+            $schema = DATAPATH . 'schema.xsd';
+            
+            $validation = "<div>";
+            libxml_use_internal_errors(true);
+            
+            if ($xml->schemaValidate($schema)) {
+                $validation .= "XML data validates properly.";
+            } else {
+                $errors = libxml_get_errors();
+                foreach ($errors as $error){
+                    $validation .= "XML data failed to validate. Error: \"$error->message\" $error->level at line $error->line on column $error->column <br/>";
+                }
+                
+            }
+            libxml_clear_errors();
+            
+            $validation .= "<div>";
+            $this->data['validation'] = $validation;
             $this->render();
 	}
+        
+        
+        
         
         public function showTimetable() {
             
