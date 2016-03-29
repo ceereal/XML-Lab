@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <!-- List of days of the week, restraint -->
     <xs:simpleType name="Tdaylist">
          <xs:restriction base="xs:string">
              <xs:enumeration value="Monday"/>
              <xs:enumeration value="Tuesday"/>
              <xs:enumeration value="Wednesday"/>
              <xs:enumeration value="Thursday"/>
-             <xs:enumeration value="Friday"/>
-             
+             <xs:enumeration value="Friday"/>  
          </xs:restriction>
     </xs:simpleType>
     
+    <!-- a day which contains a booking, and the day of the week as attribute -->
     <xs:complexType name="Tday">
         <xs:sequence>
             <xs:element name="booking" type="Tbooking" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="day" type="Tdaylist" use="required"/>
     </xs:complexType>
-    
+    <!-- a course which contains a booking and the course code as attribute -->
     <xs:complexType name="Tcourses">
         <xs:sequence>
             <xs:element name="booking" type="Tbooking" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="course" type="Tcoursecode"/>
     </xs:complexType>
-    
+    <!-- a time which contrains a booking and the start time attribute -->
     <xs:complexType name="Tstime">
         <xs:sequence>
             <xs:element name="booking" type="Tbooking" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="startTime" type="Ttime"/>
     </xs:complexType>
-    
+    <!--The basic time element, can be used for start or end time -->
     <xs:simpleType name="Ttime">
         <xs:restriction base="xs:string">
-            <!-- represents up to 19:59 although since it's a 12h clock we only need up to 12:59 -->
+            <!-- represents up to 19:59 although since it's a 12h clock we only need up to 12:59 
+            no need to represent all the way up to 23:59 though.-->
             <xs:pattern value="[0-1]?[0-9]:[0-5][0-9]"/>
         </xs:restriction>
     </xs:simpleType>
-    
+    <!--Course code restraint, regex checks that it's ACIT + 4 numbers -->
     <xs:simpleType name="Tcoursecode">
         <xs:restriction base="xs:string">
             <!-- not as multipurpose but it fits our schedule-->
             <xs:pattern value="ACIT\d{4}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+    <!--The booking object slightly complicated
+    may contain a startTime, but doesn't have to,
+    may contain a day, but doesn't have to,
+    may contain a course code, but doesn't have to
+    everything else is implicitly mandatory.    -->
     <xs:complexType name="Tbooking">
         <xs:sequence>
             <xs:element name="startTime" type="Ttime" minOccurs="0" maxOccurs="1"/>
@@ -59,18 +65,20 @@
             
         </xs:sequence>
     </xs:complexType>
-    
+    <!--The instructor. No regex, just constrained to string. -->
     <xs:simpleType name="Tinstructor">
         <xs:restriction base="xs:string"/>
     </xs:simpleType>
         
-    
+    <!--The room code, constrained to 2 letters (NE, SW, SE, NW
+    and then 1 or 2 numbers, then a dash and 3 or 4 numbers.
+    it's strict but perfectly fits all the room codes of our courses.    -->
     <xs:simpleType name="Troom">
         <xs:restriction base="xs:string">
             <xs:pattern value="[A-Z]{2}\d{1,2}-\d{3,4}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+    <!--The type of class, simply lab or lecture -->
     <xs:simpleType name="Ttype">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Lab"/>
@@ -78,7 +86,9 @@
         </xs:restriction>
     </xs:simpleType>
 
-
+<!-- The root level of our xml doc that contains many of the three
+    facet elements that everything else is organized under.
+    They are represented above as complexTypes -->
 	<xs:element name="data">
 		<xs:complexType>
 			<xs:sequence>
