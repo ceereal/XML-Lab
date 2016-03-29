@@ -4,8 +4,13 @@
     <div class ="option">  
     </div>
     
+    <div class="xml">
+        
+        {validation}
+        
+    </div>
 
-<div class="timeTable">
+<!-- <div class="timeTable">
     {bookings}
     <div class="booking">
         <p>---------------------------------</p>
@@ -19,5 +24,5 @@
 </div>
         
     </div>
-    
+    -->
 </div>
