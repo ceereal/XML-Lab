@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="html"/>
+	
+	
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Timetable Schedule</title>
+			</head>
+			<body>
+				<h1>Timetable Schedule</h1>
+				<table border="1">
+					<xsl:call-template name="timeAcross"/>
+				</table>
+			</body>
+		</html>
+	</xsl:template>
+
+<!-- start times horizontal -->
+	<xsl:template name="timeAcross">
+		<tr>
+			<th></th>
+			<xsl:for-each select="/data/day/booking/startTime">
+				<th>
+					<xsl:value-of select="./@startTime"/>
+				</th>
+			</xsl:for-each>
+		</tr>
+	</xsl:template>
+	
+<!-- handle the bookings-->
+	<xsl:template match="day">
+		<tr>
+			<td>
+				<xsl:value-of select=".@day"/>
+			</td>
+			<xsl:for-each select="booking">
+				<xsl:sort select=".@startTime"/>
+				<xsl:apply-templates select="."/>
+			</xsl:for-each>
+		</tr>
+	</xsl:template>
+	
+<!-- handle one booking time-->
+	<xsl:template match="booking">
+		<td>
+			<xsl:value-of select="./@course"/><br/>
+			<xsl:value-of select="./@room"/><br/>
+			<xsl:value-of select="./@instructor"/><br/>
+			<xsl:value-of select="./@type"/><br/>
+			<xsl:value-of select="./@startTime -"/>
+			<xsl:value-of select="./@endTime"/><br/>
+			
+		</td>
+	</xsl:template>
+</xsl:stylesheet>
